@@ -14,12 +14,9 @@
 # limitations under the License.
 
 # inherit from common trlte
--include device/samsung/trlte-common/BoardConfigCommon.mk
+include device/samsung/trlte-common/BoardConfigCommon.mk
 
 TARGET_OTA_ASSERT_DEVICE := trltechn,trltechnzh,trlteduos,trlteduosctc,trlteduoszc,trlteduoszh,trlteduoszn
-
-# Audio
-AUDIO_FEATURE_SAMSUNG_DUAL_SIM := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -36,11 +33,11 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 19922944
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3472883712
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11874054144
 
+# Radio/RIL
+include $(COMMON_PATH)/radio/dual/board.mk
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/trlte-common/releasetools
-
-# Properties
-TARGET_SYSTEM_PROP += device/samsung/trlteduos/system.prop
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/trlteduos/sepolicy
