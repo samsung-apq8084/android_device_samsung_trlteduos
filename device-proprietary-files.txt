@@ -32,8 +32,8 @@ lib/libshdace.so
 lib/libprotobuf-cpp-full.so
 bin/efsks
 bin/ks
-bin/mdm_helper
-bin/mdm_helper_proxy
+bin/mdm_helper|81238d8d4ee7d06a869e559cdeb55498
+bin/mdm_helper_proxy|f3af90bd201e0b539d6af018f376b5f3
 bin/qcks
 bin/qmuxd
 lib/libsec-ril.so
