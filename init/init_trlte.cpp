@@ -1,6 +1,6 @@
 /*
    Copyright (c) 2016, The Linux Foundation. All rights reserved.
-
+   Copyright (c) 2017-2018, The LineageOS Project. All rights reserved.
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +13,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -31,24 +30,32 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
+#include <android-base/logging.h>
+#include <android-base/properties.h>
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
 
 #include "init_apq8084.h"
 
+using android::base::GetProperty;
+using android::init::property_set;
+
 void gsm_properties()
 {
-    property_set("telephony.lteOnGsmDevice", "1");
-    property_set("ro.telephony.default_network", "9");
+    property_override("telephony.lteOnGsmDevice", "1");
+    property_override("ro.telephony.default_network", "9");
 }
 
-void cdma_properties()
+void cdma_properties(char const *operator_alpha,
+                     char const *operator_numeric,
+                     char const *cdma_sub)
 {
-    property_set("ro.cdma.home.operator.alpha", "中国电信");
-    property_set("ro.cdma.home.operator.numeric", "46003");
-    property_set("ro.telephony.default_cdma_sub", "0");
+    /* Dynamic CDMA Properties */
+    property_set("ro.cdma.home.operator.alpha", operator_alpha);
+    property_set("ro.cdma.home.operator.numeric", operator_numeric);
+    property_set("ro.telephony.default_cdma_sub", cdma_sub);
+
+    /* Static CDMA Properties */
     property_set("ril.subscription.types", "NV,RUIM");
     property_set("ro.telephony.default_network", "10");
     property_set("telephony.lteOnCdmaDevice", "1");
@@ -56,11 +63,11 @@ void cdma_properties()
 
 void init_target_properties()
 {
-    std::string platform = property_get("ro.board.platform");
+    std::string platform = GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    std::string bootloader = property_get("ro.bootloader");
+    std::string bootloader = GetProperty("ro.bootloader", "");
 
     if (bootloader.find("N9100ZC") == 0) {
         property_override("ro.build.fingerprint", "samsung/trlteduoszc/trltechn:6.0.1/MMB29M/N9100ZCS1DQH1:user/release-keys");
@@ -91,10 +98,8 @@ void init_target_properties()
         property_override("ro.product.name", "trlteduosctc");
         property_override("rild.libpath", "/system/lib/libsec-ril-09w.so");
         cdma_properties();
-    } else {
-        ERROR("Setting product info FAILED\n");
     }
 
-    std::string device = property_get("ro.product.device");
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
+    std::string device = GetProperty("ro.product.device", "");
+    LOG(ERROR) << "Found bootloader id " << bootloader <<  " setting build properties for " << device <<  " device" << std::endl;
 }
