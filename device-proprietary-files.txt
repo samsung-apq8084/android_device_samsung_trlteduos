@@ -24,5 +24,5 @@ lib/libsec-ril.so
 lib/libsec-ril-dsds.so
 lib/libsec-ril-09w.so
 lib/libsec-ril-dsds-09w.so
-vendor/lib/lib/libril-qcril-hook-oem.so
+vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libcneapiclient.so
