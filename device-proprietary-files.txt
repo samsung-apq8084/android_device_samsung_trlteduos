@@ -21,5 +21,8 @@ bin/netmgrd:blobs/spr/vendor/bin/netmgrd
 bin/qcks:blobs/spr/vendor/bin/qcks
 bin/qmuxd:blobs/spr/vendor/bin/qmuxd
 lib/libsec-ril.so:blobs/spr/vendor/lib/libsec-ril.so
+lib/libsec-ril-09w.so:blobs/spr/vendor/lib/libsec-ril-09w.so
+lib/libsec-ril-dsds.so:blobs/spr/vendor/lib/libsec-ril-dsds.so
+lib/libsec-ril-dsds-09w.so:blobs/spr/vendor/lib/libsec-ril-dsds-09w.so
 vendor/lib/libril-qcril-hook-oem.so:blobs/spr/vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libcneapiclient.so:blobs/spr/vendor/lib/libcneapiclient.so
