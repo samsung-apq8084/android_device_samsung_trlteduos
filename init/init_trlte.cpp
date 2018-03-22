@@ -46,16 +46,11 @@ void gsm_properties()
     property_override("ro.telephony.default_network", "9");
 }
 
-void cdma_properties(char const *operator_alpha,
-                     char const *operator_numeric,
-                     char const *cdma_sub)
+void cdma_properties()
 {
-    /* Dynamic CDMA Properties */
-    property_set("ro.cdma.home.operator.alpha", operator_alpha);
-    property_set("ro.cdma.home.operator.numeric", operator_numeric);
-    property_set("ro.telephony.default_cdma_sub", cdma_sub);
-
-    /* Static CDMA Properties */
+    property_set("ro.cdma.home.operator.alpha", "中国电信");
+    property_set("ro.cdma.home.operator.numeric", "46003");
+    property_set("ro.telephony.default_cdma_sub", "0");
     property_set("ril.subscription.types", "NV,RUIM");
     property_set("ro.telephony.default_network", "10");
     property_set("telephony.lteOnCdmaDevice", "1");
