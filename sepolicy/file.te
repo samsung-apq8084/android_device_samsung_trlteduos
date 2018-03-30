@@ -1,0 +1,3 @@
+# efs
+type app_efs_file, file_type;
+type imei_efs_file, file_type;

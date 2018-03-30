@@ -41,3 +41,4 @@ lib/libsec-ril-dsds.so
 lib/libsec-ril-09w.so
 lib/libsec-ril-dsds-09w.so
 vendor/lib/libril-qcril-hook-oem.so
+../sbin/cbd:sbin/cbd

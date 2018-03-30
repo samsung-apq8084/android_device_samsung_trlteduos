@@ -35,5 +35,11 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 19922944
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3472883712
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 11874054144
 
+# Properties
+TARGET_SYSTEM_PROP += device/samsung/trlteduos/system.prop
+
+# SELinux
+BOARD_SEPOLICY_DIRS += device/samsung/trlteduos/sepolicy
+
 # inherit from the proprietary version
 -include vendor/samsung/trlteduos/BoardConfigVendor.mk
