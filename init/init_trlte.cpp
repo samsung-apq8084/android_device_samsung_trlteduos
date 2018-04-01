@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The Linux Foundation. All rights reserved.
+   Copyright (c) 2017-2018, The LineageOS Project. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -67,32 +68,32 @@ void init_target_properties()
     std::string bootloader = GetProperty("ro.bootloader", "");
 
     if (bootloader.find("N9100ZC") == 0) {
-        property_override("ro.build.fingerprint", "samsung/trlteduoszc/trltechn:6.0.1/MMB29M/N9100ZCS1DQH1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/trlteduoszc/trltechn:6.0.1/MMB29M/N9100ZCS1DQH1:user/release-keys");
         property_override("ro.build.description", "trlteduoszc-user 6.0.1 MMB29M N9100ZCS1DQH1 release-keys");
-        property_override("ro.product.model", "SM-N9100");
-        property_override("ro.product.device", "trltechn");
-        property_override("ro.product.name", "trlteduoszc");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9100");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "trltechn");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "trlteduoszc");
         gsm_properties();
     } else if (bootloader.find("N9100ZH") == 0) {
-        property_override("ro.build.fingerprint", "samsung/trlteduoszh/trltechnzh:6.0.1/MMB29M/N9100ZHU1DQG1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/trlteduoszh/trltechnzh:6.0.1/MMB29M/N9100ZHU1DQG1:user/release-keys");
         property_override("ro.build.description", "trlteduoszh-user 6.0.1 MMB29M N9100ZHU1DQG1 release-keys");
-        property_override("ro.product.model", "SM-N9100");
-        property_override("ro.product.device", "trltechnzh");
-        property_override("ro.product.name", "trlteduoszh");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9100");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "trltechnzh");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "trlteduoszh");
         gsm_properties();
     } else if (bootloader.find("N9106W") == 0) {
-        property_override("ro.build.fingerprint", "samsung/trlteduoszn/trltechn:6.0.1/MMB29M/N9106WZNU1DQB1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/trlteduoszn/trltechn:6.0.1/MMB29M/N9106WZNU1DQB1:user/release-keys");
         property_override("ro.build.description", "trlteduoszn-user 6.0.1 MMB29M N9106WZNU1DQB1 release-keys");
-        property_override("ro.product.model", "SM-N9106W");
-        property_override("ro.product.device", "trltechn");
-        property_override("ro.product.name", "trlteduoszn");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9106W");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "trltechn");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "trlteduoszn");
         gsm_properties();
     } else if (bootloader.find("N9109W") == 0) {
-        property_override("ro.build.fingerprint", "samsung/trlteduosctc/trltechn:6.0.1/MMB29M/N9109WKEU1DQD1:user/release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "samsung/trlteduosctc/trltechn:6.0.1/MMB29M/N9109WKEU1DQD1:user/release-keys");
         property_override("ro.build.description", "trlteduosctc-user 6.0.1 MMB29M N9109WKEU1DQD1 release-keys");
-        property_override("ro.product.model", "SM-N9109W");
-        property_override("ro.product.device", "trltechn");
-        property_override("ro.product.name", "trlteduosctc");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "SM-N9109W");
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "trltechn");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "trlteduosctc");
         cdma_properties();
     } else {
         gsm_properties();
