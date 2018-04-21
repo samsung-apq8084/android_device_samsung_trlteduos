@@ -22,7 +22,7 @@ service ril-daemon2-gsm /vendor/bin/hw/rild -l /vendor/lib/libsec-ril-dsds.so -c
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 on property:rild.lib2_type=cdma
-    start ril-daemon2-cdma
+    enable ril-daemon2-cdma
 
 on property:rild.lib2_type=gsm
-    start ril-daemon2-gsm
+    enable ril-daemon2-gsm
