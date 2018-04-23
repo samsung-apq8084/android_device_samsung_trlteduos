@@ -22,6 +22,7 @@ TARGET_OTA_ASSERT_DEVICE := trltechn,trltechnzh,trlteduos,trlteduosctc,trlteduos
 AUDIO_FEATURE_SAMSUNG_DUAL_SIM := true
 
 # Kernel
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_chnduos_defconfig
 
 # Init
