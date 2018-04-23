@@ -89,7 +89,6 @@ void init_target_properties()
         property_override("ro.product.model", "SM-N9109W");
         property_override("ro.product.device", "trltechn");
         property_override("ro.product.name", "trlteduosctc");
-        property_override("rild.libpath", "/system/lib/libsec-ril-09w.so");
         cdma_properties();
     } else {
         ERROR("Setting product info FAILED\n");

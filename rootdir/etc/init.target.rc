@@ -6,13 +6,6 @@ service ril-daemon1 /system/bin/rild -l /system/lib/libsec-ril-dsds.so -c 2
     user root
     group radio cache inet misc audio log qcom_diag
 
-# for trlteduosctc
-service ril-daemon1-09w /system/bin/rild -l /system/lib/libsec-ril-dsds-09w.so -c 2
-    socket rild2 stream 660 root radio
-    socket rild-debug2 stream 660 radio system
-    user root
-    group radio cache inet misc audio log qcom_diag
-
 # CP2
 service cpboot-daemon /sbin/cbd -d -p 22
     class main
@@ -21,8 +14,3 @@ service cpboot-daemon /sbin/cbd -d -p 22
     seclabel u:r:cbd:s0
     onrestart restart ril-daemon1
 
-service qcom-ril-sh /system/bin/sh /init.qcom.ril.sh
-    class late_start
-    user root
-    group root
-    oneshot

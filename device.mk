@@ -24,8 +24,12 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/trlteduos/overlay
 
 # RIL
 PRODUCT_PACKAGES += \
-    init.target.rc \
-    init.qcom.ril.sh
+    init.target.rc
+
+# Variant blobs script
+PRODUCT_COPY_FILES += \
+    device/samsung/trlteduos/releasetools/variant_blobs_hook.sh:install/bin/variant_blobs_hook.sh \
+    device/samsung/trlte-common/releasetools/variant_blobs.sh:install/bin/variant_blobs.sh
 
 # common trlte
 $(call inherit-product, device/samsung/trlte-common/trlte.mk)

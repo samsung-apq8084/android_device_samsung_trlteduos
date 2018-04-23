@@ -1,0 +1,2 @@
+lib/libsec-ril.so:blobs/cdma/lib/libsec-ril.so
+lib/libsec-ril-dsds.so:blobs/cdma/lib/libsec-ril-dsds.so

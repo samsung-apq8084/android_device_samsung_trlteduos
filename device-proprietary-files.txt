@@ -36,9 +36,5 @@ bin/mdm_helper
 bin/mdm_helper_proxy
 bin/qcks
 bin/qmuxd
-lib/libsec-ril.so
-lib/libsec-ril-dsds.so
-lib/libsec-ril-09w.so
-lib/libsec-ril-dsds-09w.so
 vendor/lib/libril-qcril-hook-oem.so
 ../sbin/cbd:sbin/cbd

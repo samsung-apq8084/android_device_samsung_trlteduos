@@ -1,0 +1,2 @@
+lib/libsec-ril.so:blobs/gsm/lib/libsec-ril.so
+lib/libsec-ril-dsds.so:blobs/gsm/lib/libsec-ril-dsds.so
