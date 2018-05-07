@@ -36,9 +36,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 11874054144
 # Radio/RIL
 include $(COMMON_PATH)/radio/dual/board.mk
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/trlte-common/releasetools
-
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/trlteduos/sepolicy
 

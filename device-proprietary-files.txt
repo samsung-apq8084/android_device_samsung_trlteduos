@@ -28,6 +28,8 @@ lib/libbt-vendor.so
 lib/libbt-codec_aptx.so
 lib/libbt-aptX-ARM-4.2.2.so
 lib/libbt-codec_sshd.so
+lib/libsec-ril.so
+lib/libsec-ril-dsds.so
 lib/libshdace.so
 lib/libprotobuf-cpp-full.so
 bin/efsks
