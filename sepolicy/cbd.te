@@ -19,9 +19,6 @@ allow cbd radio_device:chr_file rw_file_perms;
 # /sys/devices/virtual/sec/switch/uart_sel
 allow cbd sysfs:file rw_file_perms;
 
-# /dev/log/*
-allow cbd log_device:dir r_dir_perms;
-allow cbd log_device:chr_file rw_file_perms;
 # /dev/kmsg (write to kernel log)
 allow cbd kmsg_device:chr_file rw_file_perms;
 
