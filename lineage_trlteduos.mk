@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,11 +16,14 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit common LineageOS phone.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
 # Inherit from trlte device
 $(call inherit-product, device/samsung/trlteduos/device.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_trlteduos
+PRODUCT_NAME := lineage_trlteduos
 PRODUCT_DEVICE := trlteduos
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
